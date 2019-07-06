@@ -1,0 +1,17 @@
+To Run:
+python app.py 
+
+Required Packages:
+python3,
+pip3
+flask,
+wtforms,
+huffman compressor
+lzw compressor
+shannon compressor
+os
+
+
+Paths:
+C:\Users\RaviKumarReddyK\Desktop\Saadhana\BE\data\test\part1\3-1msg3.txt
+C:\Users\RaviKumarReddyK\Desktop\Saadhana\BE

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %} 
+    <br><br><br><br>
+    <div class="jumbotron text-center">
+        <h1> Success </h1>
+        <p class="lead"> Your file has been successfully processed. Output is at {{opfile}}</p>
+        <p class="lead"> Output Location: {{opfile}}</p>
+        <p class="lead"> File Size before Compression: {{bsize}}</p>
+        <p class="lead"> File Size after Compression: {{asize}}</p>
+    </div>
+{% endblock %}
