@@ -1,0 +1,447 @@
+												C++ LANGUAGE
+						
+-> INTRODUCTION
+		
+		> Derived from c
+		> #include<iostream>     # targets complier's pre-processor <iostream> defines standard input and output_iterator
+		> compiler ignores blank lines,white spaces ,tabs ,newlines, etc
+		> main()   function    {} indicate the starting of the program
+		> C++ is case sensitive
+        > PRINTING THE MESSAGES
+			~ cout for printing with insertion operator <<
+			~ The message to be printed should be present within double qoutes and in cout operation	
+			~ To move to the below line we use endl or \n  where \ is a escape character
+		
+		> COMMENTS	
+			~ // for single line commenting
+			~ /* for multi line commenting */
+		> VARIABLES
+			~ datatype variable_name; // decleration
+			~ datatype variable_name=value; //initiaization
+			~ Identifier's are the names gien to the variales
+			~ Identifier starts with a letter or a underscore
+		> User input is given with cin and an etraction operator >>
+		> ARITHMETIC OPERATORS
+			~ + addition
+			~ - subtraction
+			~ * multiplication
+			~ / division
+			~ % modulus
+		> assignment,increment,and decrement operators same as C
+		
+
+-> CONDITIONALS AND LOOPS
+
+		> if(condition)   //simple if
+		{
+			statements
+		}
+		> RELETIONAL OPERATORS
+			~ > greater than
+			~ < lessthan
+			~ >= greater than or equal to
+			~ <= less than or equal to
+			~ == equal to
+			~ != not equal to 
+		> if(condition)   // if else
+		{
+			statements
+		}
+		else
+		{
+			statements
+		}
+		
+		> if(condition)   // nested if
+		{
+			statements
+			if(condition)
+				statements
+			else              // else optional
+				statemets
+		}
+		else
+		{
+			statements
+		}
+		
+		
+		> while(condition)         // while loop
+		{
+			statements
+		}
+		
+		> for(initializaton;condition;increment)               // for loop
+		{
+			statements
+		}
+		
+		> do          // do-while statement
+		{
+			statements
+		}while(condition);
+		
+		> switch (expression)    // switch statement 
+		{
+			case value1:
+			statement(s);
+			break;
+			case value2:
+			statement(s);
+			break;
+			...
+			case valueN:
+			statement(s);
+			default:
+			statemets
+		}
+		
+		> LOGICAL OPERATORS
+				~ && AND operator
+				~ || OR operator
+				~ ! NOT operator
+				
+				
+-> DATATYPES , ARRAYS ,AND POINTERS
+	
+		> int integer values 
+		> float floating point values
+		> double double-precission values
+		> char  string values
+		> bool true or false
+		> singned integer can hold both negative and positive numbers
+		> unsigned integer can hold only positive numbers
+		> string is a sequence of characters enclosed within double qoutes #include<string>  is used
+		> Blank spaces or special characters are not allowed in naming of variables
+		> TWO NAMING CONVENTIONS
+			~ Pascal case: the first letter in the identifier is capital and the first letter of each subsequent concatenated word are capitalized 
+			~ Camel case: the first letter in the identifier is lowercase and the first letter of each subsequent concatenated word are capitalized
+		> ARRAYS
+			~ an array is used to store a coollection;collection of same datatype values
+			~ datatype array_name[size];    size always starts from 0
+			~ values can be directly innitialized or loops are used
+			~ two/multi dimensional array are represented as rows and coloumns
+		> POINTERS
+			~ used to point to address of a variable 
+			~ address canbe acessed using & 
+			~ A pointer a variable , with the address of another variable 	as its value
+			~ * is used to represent pointer variable / dereferencing the operator
+			~ &   returns the memory address of its operand 
+			~ *   returns value of the variable located at the address specified b its operand 
+		> Usually memory is divided into two types
+			1. The stack : all of your local variables take up memory fromt the stack
+			2. The heap : unused proram memory that can be used when the program runs to dynamically allocate the memory
+			~ new operator can be used to allocate memory from heap dynamically
+			           int *p=new int;
+			~ delete operator is used to deallocate memory from heap dynamically
+						delete p;
+			~ if forgotten to free up the memory it leads to memory leaks
+		> Pointers that are left pointing to the unavailable memory locations are called DANGLING POINTERS
+		> sizeof(datatype) operator can be used  to get a variable or datatypes size in bytes
+		> sizeof()
+			~ bool 1byte
+			~ char 1byte
+			~ short  2bytes
+			~ int  2bytes
+			~ long 4bytes
+			~ long long   8bytes 
+			~ float  4bytes
+			~ double 8bytes
+			~ long double 8bytes
+			
+->  FUNCTIONS  
+		> A function is a group of statements that perform a particular task
+		> return_type function_name(parameter list)  // parameter list optional 
+		{
+			body of function
+		}
+		> rand()   pseudo random number generator function     #include<cstdlib>
+		> srand()  used to generate truely random numbers  // s-seed
+		> Function overloading : allows to create multiple functions with the same name , so has long as the have different parameters
+		> base cases are very important for recursion
+		> There are two ways to pass arguments to a function as the function is being is called :
+			1. PASS BY VALUE: This method copies the arguments actuall value into formal parameters ; no effect on actual parameters if any changes
+					void myFunc(int x) {
+					x = 100;
+					}
+
+					int main() {
+					int var = 20;
+					myFunc(var);
+					cout << var;
+					}
+					// Outputs 20
+
+			2. PASS BY REFERENCE: copies arguments reference ; if any change effects the actual parameters
+					void myFunc(int *x) {
+					*x = 100;
+					}
+
+					int main() {
+					int var = 20;
+					myFunc(&var);
+					cout << var;
+					}
+					// Outputs 100
+		
+-> CLASSES AND OBJECTS
+
+		> Objects is self-contained and  are independent units, and each has its own identity ; characteristics of objects are called attributes
+		> objects are created using classes 
+		> method is a function that belongs to a class
+		> objects are called the instances of class
+		> class class_name    //class decleration 
+		{
+			members
+		};
+		> access specifiers 
+			~ private: members accessed only within the class
+			~ public: members accessable outside the class also
+			~ protected
+		> data abstraction: process of representing essential features without including implementation details 
+		> encapsulation/data hiding  means more that simply combining attributes and behaviour together within a class;it also means restricting access to the inner working of that class
+		> getName() method returns the value of the priate name attribute 
+		> constructors : special member functions of a class ; They are executed whenever new objects are created within that class.
+					class myClass {
+					public:
+					myClass(string nm) {
+					setName(nm);
+					}
+					void setName(string x) {
+					name = x;
+					}
+					string getName() {
+					return name;
+					}
+					private:
+					string name;
+					};
+
+					int main() {
+					myClass ob1("David");
+					myClass ob2("Amy");
+					cout << ob1.getName();
+					}
+					//Outputs "David"
+					
+		> double colen (::) is called the scope resolution operator used for constrution definition
+		> Destructors are special functions they are called when the object is destroyed or deleted
+		> objects are destroyed when they out of scope, or whenever the delete expression is applied to a pointer directed at an object of a class
+        > the name of the destructor will be exactly the same as the class only prefixed with tiled operator(~) ( constructors do also have same name as the class name
+		> A destructor cannnot return or take anyvalues
+		     #include "MyClass.h"
+			 #include <iostream>
+			 using namespace std;
+			 MyClass::MyClass()
+			 {
+				cout<<"Constructor"<<endl;
+			 }
+
+			 MyClass::~MyClass()
+			{
+				cout<<"Destructor"<<endl;
+			}
+		> dot (.) operator is used to access the members of a class with objects
+		> pointers can be used to access objects members
+				MyClass obj;
+				MyClass *ptr = &obj;
+		> the arrow member selection operator (->) is used  to access an objects members with a pointer
+		> A constant ia an expression with a fixed value 
+		> constant objects can also be created using const keyword in a constructor
+		> only a non-constant objects can call non-constant functions 
+		> To specify a function  as a const member ,the const keyword must follow the function prototype outside of its parameter's closing parenthesis
+		> attaempting to call a regular function from a constant object results in an error
+		
+		> COMPOSITION
+			~ complex objects are typically built using smaller , simpler objects ;this process is called composition
+			~ member initializers use :   for regular and constant variables
+			~ #include <string>
+			  #include "Birthday.h"
+
+			  class Person {
+			  public:
+			  Person(string n, Birthday b)
+			  : name(n),
+			  bd(b)
+			  {
+			  }
+			  private:
+			  string name;
+			  Birthday bd;
+			  };
+			~ usually members in private access specifier are not accessable outside the class so declaring non-member function as friend the membes os private can be accessed
+					class MyClass {
+					public:
+					MyClass() {
+					regVar = 0;
+					}
+					private:
+					int regVar;
+    
+					friend void someFunc(MyClass &obj);
+					};
+			~ The function someFunc() is defined  as regular function outside the class ; it takes an object of typr class_name as its parameter and is able to access the private data members of the object
+			~ friend function ia applicable between two class private members ;they are not class members
+			~ every object has access to its own address through an important pointer called this pointer; used to refer and invoke objects
+			~ this operator uses -> for accessing the members
+			~  #include <iostream>
+			   using namespace std;
+
+			   class MyClass {
+			   public:
+				MyClass(int a) : var(a)
+					{ }
+				void printInfo() {
+				cout << var <<endl;
+				cout << this->var <<endl;
+				cout << (*this).var <<endl; 
+				}
+			  private:
+				int var;
+					};
+
+			int main() {
+			MyClass obj(42);
+			obj.printInfo();
+			}
+
+			/* Outputs
+			42
+			42
+			42
+			*/
+			
+			~ The this keyword has important role in operator overloading ; the keyword operator is used followed by the operator
+			
+			
+-> INHERITANCE AND POLYMORPHISM
+		
+		> The class whose properties are inherited by another class is called the base class. The class which inherits the properties is called the derived class.
+		> The base class is specified usingg a colon  and a access specifier 
+		> A class can be derived from multiple classes by specifying the base classes in comma - separated list.
+		> A protected access specifier can be accessed in derived classes
+		> access specifiers can be used in even in inheritance concept
+			~ public ineritance: public memners of base class become public members of derived class ;protected members of base class become protected in derived class
+			~ protected inheritance: public and protected members of the base class become protected members of the derived class
+			~ private inheritance: public and protected members of the base class become private members of derived class
+		> constructors and destructors cannot be inherited
+		> base class constructors are first called 
+		> base class destructor is called first
+		> POLYMORPHISM means that a call to a member function will cause to a diffrence implementation to executed depending on the type of the object that invokes the function
+		> defining VIRTUAL FUNCTION in the base class; with the corresponding version in a derived class , allows polymorphism to use enemey pointers to call the derived function
+		> A virtual function is base class function that is declared using the keyword virtual
+		> A class that declares or inherits a virtual function is called polmorphic function
+		> The virtual member function without definition are known as pure irtual function ; basically specify that derived classess define that function on there own
+		> Every derived class inheriting from a class with pure virtual function must override the function
+					class Enemy {
+						public:
+						virtual void attack() = 0;
+						};
+
+					class Ninja: public Enemy {
+						public:
+						void attack() {
+						cout << "Ninja!"<<endl;
+						}
+					};
+
+					class Monster: public Enemy {
+						public:
+						void attack() {
+						cout << "Monster!"<<endl;
+						}
+					};
+		> Abstract classes are classes that can only be used as base classes ,and thus are allowed  to have pure virtual functions.
+		> Abstract classes can be used o create pointers and take advantage of all its pollymorphic abilities
+		
+		
+-> TEMPLATES ,ExCEPTIONS ,AND FILES
+		> with function templates we can be able to write one version of a function to work with parameters of any type
+		> capability of defining functions using placeholder types are called template type parameters
+				template<class T>
+		
+		
+				template <class T>
+				T sum(T a, T b) {
+				return a+b;
+				}
+
+				int main () {
+				int x=7, y=15;
+				cout << sum(x, y) << endl;
+				}
+
+				// Outputs 22
+		> function templates also make it possible to work multiple generic data types 
+				template <class T, class U>
+		> function template decleration 
+				template <class T, class U>
+				T smaller(T a, U b) {   // T is short for type 
+				return (a < b ? a : b);
+				}
+		> class templates
+				template <class T>
+				class MyClass {
+
+				};
+		>    template <class T>
+				class Pair {
+				private:
+				T first, second;
+				public:
+				Pair (T a, T b):
+				first(a), second(b) {
+				}
+			};
+		> class templates can be defined outside the class 
+				template <class T>
+				class Pair {
+				private:
+				T first, second;
+				public:
+				Pair (T a, T b):
+				first(a), second(b){
+				}
+				T bigger();
+				};
+
+				template <class T>	
+				T Pair<T>::bigger() {
+					// some code
+				}
+		> Template specialization allows for the definition of a different implementation of a template when a specific type is passed as a template argument.
+				template <class T>
+					class MyClass {
+					public:
+					MyClass (T x) {
+					cout <<x<<" -  not a char"<<endl;
+					}
+					};
+
+					template < >	
+					class MyClass<char> {
+					public:
+					MyClass (char x) {
+					cout <<x<<" is a char!"<<endl;
+					}
+					};
+		>  The problems that occur during program execution are called ExCEPTIONS
+		> exception handler
+			~ throw   used to throw as exception when a problem shows up
+			~ A try block identifies a block of code that will activate specific exceptions. It's followed by one or more catch blocks. The catch keyword represents a block of code that executes when a particular exception is thrown. 
+		> For reading an dwritting in files we have fstream
+		> open("filename.txt")  opens the file 
+		> filename.close()   used to close the files
+		> is_open()   used to check if the file is open or not
+		>  file opening modes
+			~ ios::app     append to end of file 
+			~ ios::ate     go to end of dile on opening 
+			~ ios::binary file open in binary modes
+			~ ios::in    open file for reading only
+			~ ios::out    open file for writting only
+			~ ios::trunc   delete the contents of file if present 
+			
+		> A getline() function reads characters from input stream and places them into string
+		
+	
+	
